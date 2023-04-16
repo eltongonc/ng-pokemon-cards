@@ -1,0 +1,32 @@
+<div
+  class="card card-side w-full max-w-xl border border-[#23b38c] shadow-xl p-2"
+>
+  <figure>
+    <img [src]="imgUrl" [alt]="name" class="rounded-xl" />
+  </figure>
+  <div *ngIf="size === 'md'" class="card-body">
+    <h2 class="card-title justify-between">
+      <span>
+        {{ name }}
+        <div class="badge badge-secondary" *ngIf="rarity">{{ rarity }}</div>
+      </span>
+
+      <span>€ {{ price }}</span>
+    </h2>
+    <div class="flex-1 py-2">
+      <p *ngIf="pkmnNr" class="flex justify-between">
+        <span>Pokemon number</span> <span>{{ pkmnNr }}</span>
+      </p>
+      <p *ngIf="artist" class="flex justify-between">
+        <span>Artist</span> <span>{{ artist }}</span>
+      </p>
+    </div>
+    <div class="card-actions justify-end">
+      <a
+        href="https://prices.pokemontcg.io/cardmarket/pop3-3"
+        class="btn btn-wide btn-secondary"
+        >More info</a
+      >
+    </div>
+  </div>
+</div>
